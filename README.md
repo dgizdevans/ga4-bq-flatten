@@ -9,7 +9,8 @@ This repo shows a practical workflow to profile GA4 export data and build a repr
 ## Dataset
 
 Public BigQuery dataset: [Google Merchandise Store : Obfuscated GA360 Data](https://console.cloud.google.com/marketplace/product/obfuscated-ga360-data/obfuscated-ga360-data?hl=en)  
-BigQuery ID: `bigquery-public-data.ga4_obfuscated_sample_ecommerce` 
+BigQuery ID: `bigquery-public-data.ga4_obfuscated_sample_ecommerce`
+
 Period: Nov 2020 to Jan 2021.  
 Scale: 92 daily tables, ~4.3M events.
 
