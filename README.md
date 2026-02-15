@@ -15,10 +15,23 @@ Period: Nov 2020 to Jan 2021.
 Scale: 92 daily tables, ~4.3M events.
 
 
-
 ## Contents
 
+### Notebook 
+
 - `ga4_bq_profiling_and_flattening.ipynb` - end-to-end: connect to BigQuery, profile schema and nested fields, build and validate a flat events table
+
+### SQL (BigQuery Console)
+
+The `sql/` folder contains the same profiling and flattening workflow as standalone queries for running directly in the BigQuery UI.
+
+Run order:
+1. `01_profile_event_params.sql`
+2. `02_profile_user_properties.sql`
+3. `03_profile_items.sql`
+4. `04_profile_flat_fields.sql`
+5. `05_flatten.sql`
+6. `06_validate.sql` (optional)
 
 ## Approach
 
@@ -53,3 +66,9 @@ Flat table: 4,295,584 rows x 60 columns, 1:1 with source events (event-level gra
 1. Open the notebook in Colab
 2. Set `PROJECT_ID` and `DEST_DATASET`
 3. Run all cells
+
+## Write-up
+
+Medium article (BigQuery UI walkthrough) - coming soon.
+
+
