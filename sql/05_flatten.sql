@@ -1,3 +1,5 @@
+-- Update PROJECT_ID and DEST_DATASET before running
+CREATE OR REPLACE TABLE `PROJECT_ID.DEST_DATASET.ga4_flat_events` AS
 SELECT
     -- identifiers
     event_date,
@@ -59,7 +61,8 @@ SELECT
     (SELECT MAX(value.string_value) FROM UNNEST(event_params) WHERE key = 'clean_event') AS clean_event,
     (SELECT MAX(value.string_value) FROM UNNEST(event_params) WHERE key = 'link_domain') AS link_domain,
     (SELECT MAX(value.string_value) FROM UNNEST(event_params) WHERE key = 'link_url') AS link_url,
-    (SELECT MAX(value.string_value) FROM UNNEST(event_params) WHERE key = 'outbound') AS outbound,
+    (SELECT MAX(COALESCE(value.string_value, CAST(value.int_value AS STRING), CAST(value.float_value AS STRING), CAST(value.double_value AS STRING)))
+     FROM UNNEST(event_params) WHERE key = 'outbound') AS outbound,
     (SELECT MAX(value.int_value) FROM UNNEST(event_params) WHERE key = 'percent_scrolled') AS percent_scrolled,
     (SELECT MAX(value.string_value) FROM UNNEST(event_params) WHERE key = 'search_term') AS search_term,
     (SELECT MAX(value.int_value) FROM UNNEST(event_params) WHERE key = 'unique_search_term') AS unique_search_term,
