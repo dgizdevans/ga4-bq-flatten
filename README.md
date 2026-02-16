@@ -69,6 +69,7 @@ Flat table: 4,295,584 rows x 60 columns, 1:1 with source events (event-level gra
 
 ## Write-up
 
-Medium article (BigQuery UI walkthrough) - coming soon.
+Medium article (BigQuery UI walkthrough): [Profiling and Flattening GA4 Data in BigQuery: A Step-by-Step Walkthrough](https://medium.com/@dmitrijs.gizdevans/profiling-and-flattening-ga4-data-in-bigquery-a-step-by-step-walkthrough-46d7f9e629a5)
 
-
+## Dataset
+The processed and flattened dataset is available on Hugging Face: **[GA4 BigQuery Flattened Dataset](https://huggingface.co/datasets/gizdevans/ga4-bq-flattened-data)**
